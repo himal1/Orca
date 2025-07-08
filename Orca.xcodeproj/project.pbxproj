@@ -3462,6 +3462,14 @@
 		84FFCAA90636D5B10069432F /* ORCaen792Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFCAA30636D5B10069432F /* ORCaen792Controller.m */; };
 		84FFCAAA0636D5B10069432F /* ORCaen792Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FFCAA40636D5B10069432F /* ORCaen792Model.h */; };
 		84FFCAAB0636D5B10069432F /* ORCaen792Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFCAA50636D5B10069432F /* ORCaen792Model.m */; };
+		865FD0122E1D7A62003112E0 /* RaspberryPi.nib in Resources */ = {isa = PBXBuildFile; fileRef = 865FD00F2E1D7A62003112E0 /* RaspberryPi.nib */; };
+		865FD0142E1D7A62003112E0 /* ORRaspberryPiController.h in Headers */ = {isa = PBXBuildFile; fileRef = 865FD00B2E1D7A62003112E0 /* ORRaspberryPiController.h */; };
+		865FD0152E1D7A62003112E0 /* ORRaspberryPiModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 865FD00D2E1D7A62003112E0 /* ORRaspberryPiModel.h */; };
+		865FD0162E1D7A62003112E0 /* ORRaspberryPiCmd.h in Headers */ = {isa = PBXBuildFile; fileRef = 865FD0092E1D7A62003112E0 /* ORRaspberryPiCmd.h */; };
+		865FD0172E1D7A62003112E0 /* ORRaspberryPiCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 865FD00A2E1D7A62003112E0 /* ORRaspberryPiCmd.m */; };
+		865FD0182E1D7A62003112E0 /* ORRaspberryPiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 865FD00E2E1D7A62003112E0 /* ORRaspberryPiModel.m */; };
+		865FD0192E1D7A62003112E0 /* ORRaspberryPiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 865FD00C2E1D7A62003112E0 /* ORRaspberryPiController.m */; };
+		865FD01D2E1D9793003112E0 /* RaspberryPi.png in Resources */ = {isa = PBXBuildFile; fileRef = 865FD01C2E1D9793003112E0 /* RaspberryPi.png */; };
 		9C086CE90D10AB6200524F47 /* mainFocalPlaneDetector.tif in Resources */ = {isa = PBXBuildFile; fileRef = 9C086CE80D10AB6200524F47 /* mainFocalPlaneDetector.tif */; };
 		9C1363C70D0A7921006C550D /* Caen265.nib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1363BF0D0A7921006C550D /* Caen265.nib */; };
 		9C1363C80D0A7921006C550D /* Caen265Card.tif in Resources */ = {isa = PBXBuildFile; fileRef = 9C1363C00D0A7921006C550D /* Caen265Card.tif */; };
@@ -7439,6 +7447,14 @@
 		84FFCAA30636D5B10069432F /* ORCaen792Controller.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ORCaen792Controller.m; sourceTree = "<group>"; };
 		84FFCAA40636D5B10069432F /* ORCaen792Model.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ORCaen792Model.h; sourceTree = "<group>"; };
 		84FFCAA50636D5B10069432F /* ORCaen792Model.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ORCaen792Model.m; sourceTree = "<group>"; };
+		865FD0092E1D7A62003112E0 /* ORRaspberryPiCmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORRaspberryPiCmd.h; sourceTree = "<group>"; };
+		865FD00A2E1D7A62003112E0 /* ORRaspberryPiCmd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORRaspberryPiCmd.m; sourceTree = "<group>"; };
+		865FD00B2E1D7A62003112E0 /* ORRaspberryPiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORRaspberryPiController.h; sourceTree = "<group>"; };
+		865FD00C2E1D7A62003112E0 /* ORRaspberryPiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORRaspberryPiController.m; sourceTree = "<group>"; };
+		865FD00D2E1D7A62003112E0 /* ORRaspberryPiModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORRaspberryPiModel.h; sourceTree = "<group>"; };
+		865FD00E2E1D7A62003112E0 /* ORRaspberryPiModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORRaspberryPiModel.m; sourceTree = "<group>"; };
+		865FD00F2E1D7A62003112E0 /* RaspberryPi.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = RaspberryPi.nib; sourceTree = "<group>"; };
+		865FD01C2E1D9793003112E0 /* RaspberryPi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RaspberryPi.png; sourceTree = "<group>"; };
 		9C086CE80D10AB6200524F47 /* mainFocalPlaneDetector.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = mainFocalPlaneDetector.tif; path = "Source/Objects/Hardware/I2C/Custom Hardware/KATRIN Hardware/eGun/mainFocalPlaneDetector.tif"; sourceTree = SOURCE_ROOT; };
 		9C1363BF0D0A7921006C550D /* Caen265.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Caen265.nib; path = Source/Objects/Hardware/Vme/CAEN/CV265/Caen265.nib; sourceTree = SOURCE_ROOT; };
 		9C1363C00D0A7921006C550D /* Caen265Card.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Caen265Card.tif; path = Source/Objects/Hardware/Vme/CAEN/CV265/Caen265Card.tif; sourceTree = SOURCE_ROOT; };
@@ -9809,6 +9825,7 @@
 		842162EE043E6317005F64B1 /* Misc Objects */ = {
 			isa = PBXGroup;
 			children = (
+				865FD0112E1D7A62003112E0 /* RaspberryPi */,
 				43B50A381CE260F6003D0146 /* RunningAverage */,
 				8461CAF81CB2D8DB001E4044 /* PulseCheck */,
 				84F0212F1D8ADC2E00FEB304 /* SyncCenter */,
@@ -15201,6 +15218,21 @@
 			path = Source/Objects/Hardware/Vme/CAEN/CV792;
 			sourceTree = SOURCE_ROOT;
 		};
+		865FD0112E1D7A62003112E0 /* RaspberryPi */ = {
+			isa = PBXGroup;
+			children = (
+				865FD01C2E1D9793003112E0 /* RaspberryPi.png */,
+				865FD0092E1D7A62003112E0 /* ORRaspberryPiCmd.h */,
+				865FD00A2E1D7A62003112E0 /* ORRaspberryPiCmd.m */,
+				865FD00B2E1D7A62003112E0 /* ORRaspberryPiController.h */,
+				865FD00C2E1D7A62003112E0 /* ORRaspberryPiController.m */,
+				865FD00D2E1D7A62003112E0 /* ORRaspberryPiModel.h */,
+				865FD00E2E1D7A62003112E0 /* ORRaspberryPiModel.m */,
+				865FD00F2E1D7A62003112E0 /* RaspberryPi.nib */,
+			);
+			path = RaspberryPi;
+			sourceTree = "<group>";
+		};
 		9C1363BE0D0A7921006C550D /* CV265 */ = {
 			isa = PBXGroup;
 			children = (
@@ -16709,6 +16741,9 @@
 				84A5F05F0AB0D9D800A623AF /* ORTRS1Decoders.h in Headers */,
 				8438002F0AB23EC20069C0BA /* ORRangeTimerController.h in Headers */,
 				843800310AB23EC20069C0BA /* ORRangeTimerModel.h in Headers */,
+				865FD0142E1D7A62003112E0 /* ORRaspberryPiController.h in Headers */,
+				865FD0152E1D7A62003112E0 /* ORRaspberryPiModel.h in Headers */,
+				865FD0162E1D7A62003112E0 /* ORRaspberryPiCmd.h in Headers */,
 				84861D300ACD83F300C543D7 /* ORL4532Controller.h in Headers */,
 				84861D320ACD83F300C543D7 /* ORL4532Model.h in Headers */,
 				84861DAA0ACDA9B600C543D7 /* ORL4532Decoders.h in Headers */,
@@ -18354,6 +18389,7 @@
 				840E72EA103DA7BC0070AD70 /* AmrelHV.nib in Resources */,
 				840E72F3103DB4980070AD70 /* AmrelHV.tif in Resources */,
 				84D8CB4810447492005585C5 /* AutoTester.nib in Resources */,
+				865FD01D2E1D9793003112E0 /* RaspberryPi.png in Resources */,
 				84D8CB4E10447A57005585C5 /* AutoTester.gif in Resources */,
 				84AB0F3D1056DA4E0069D5E2 /* ModBus.nib in Resources */,
 				84D153621BD53D2A005EC269 /* OnCallList.tif in Resources */,
@@ -18372,6 +18408,7 @@
 				847D76FB10B795DE00893F3A /* killScript in Resources */,
 				847D76FE10B7963D00893F3A /* makeScript in Resources */,
 				E6C7A5AB26D0400A007E65AE /* flashcam_adc.jpg in Resources */,
+				865FD0122E1D7A62003112E0 /* RaspberryPi.nib in Resources */,
 				8435AACC10C6D0EF00E03F7F /* NoOilHelp.plist in Resources */,
 				8435AAD410C6D0EF00E03F7F /* VarianTPS.nib in Resources */,
 				8435AAD510C6D0EF00E03F7F /* VarianTPS.tif in Resources */,
@@ -19828,6 +19865,9 @@
 				84716E3220D2BBD400649339 /* ORMultiplierController.m in Sources */,
 				CE0216BE1512139A00456EB7 /* ORnEDMCoilController.m in Sources */,
 				CE0216C01512139A00456EB7 /* ORnEDMCoilModel.m in Sources */,
+				865FD0172E1D7A62003112E0 /* ORRaspberryPiCmd.m in Sources */,
+				865FD0182E1D7A62003112E0 /* ORRaspberryPiModel.m in Sources */,
+				865FD0192E1D7A62003112E0 /* ORRaspberryPiController.m in Sources */,
 				8499A7591518D85800CD7AAC /* ORCP8CryopumpController.m in Sources */,
 				84E9C356194F42140028B7E2 /* ORPacFPModel.m in Sources */,
 				0F16E35A1C493AD7003C9EC9 /* sds.c in Sources */,
