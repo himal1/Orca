@@ -3462,15 +3462,13 @@
 		84FFCAA90636D5B10069432F /* ORCaen792Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFCAA30636D5B10069432F /* ORCaen792Controller.m */; };
 		84FFCAAA0636D5B10069432F /* ORCaen792Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FFCAA40636D5B10069432F /* ORCaen792Model.h */; };
 		84FFCAAB0636D5B10069432F /* ORCaen792Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFCAA50636D5B10069432F /* ORCaen792Model.m */; };
-		865FD0122E1D7A62003112E0 /* RaspberryPi.nib in Resources */ = {isa = PBXBuildFile; fileRef = 865FD00F2E1D7A62003112E0 /* RaspberryPi.nib */; };
 		865FD0142E1D7A62003112E0 /* ORRaspberryPiController.h in Headers */ = {isa = PBXBuildFile; fileRef = 865FD00B2E1D7A62003112E0 /* ORRaspberryPiController.h */; };
 		865FD0152E1D7A62003112E0 /* ORRaspberryPiModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 865FD00D2E1D7A62003112E0 /* ORRaspberryPiModel.h */; };
-		865FD0162E1D7A62003112E0 /* ORRaspberryPiCmd.h in Headers */ = {isa = PBXBuildFile; fileRef = 865FD0092E1D7A62003112E0 /* ORRaspberryPiCmd.h */; };
-		865FD0172E1D7A62003112E0 /* ORRaspberryPiCmd.m in Sources */ = {isa = PBXBuildFile; fileRef = 865FD00A2E1D7A62003112E0 /* ORRaspberryPiCmd.m */; };
 		865FD0182E1D7A62003112E0 /* ORRaspberryPiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 865FD00E2E1D7A62003112E0 /* ORRaspberryPiModel.m */; };
 		865FD0192E1D7A62003112E0 /* ORRaspberryPiController.m in Sources */ = {isa = PBXBuildFile; fileRef = 865FD00C2E1D7A62003112E0 /* ORRaspberryPiController.m */; };
 		865FD0232E1DBB05003112E0 /* RaspberryPiObj.png in Resources */ = {isa = PBXBuildFile; fileRef = 865FD0222E1DBB05003112E0 /* RaspberryPiObj.png */; };
 		865FD0292E1DBD95003112E0 /* RaspberryPi.png in Resources */ = {isa = PBXBuildFile; fileRef = 865FD0282E1DBD95003112E0 /* RaspberryPi.png */; };
+		865FD02D2E1EFAAB003112E0 /* RaspberryPi.xib in Resources */ = {isa = PBXBuildFile; fileRef = 865FD02C2E1EFAAB003112E0 /* RaspberryPi.xib */; };
 		9C086CE90D10AB6200524F47 /* mainFocalPlaneDetector.tif in Resources */ = {isa = PBXBuildFile; fileRef = 9C086CE80D10AB6200524F47 /* mainFocalPlaneDetector.tif */; };
 		9C1363C70D0A7921006C550D /* Caen265.nib in Resources */ = {isa = PBXBuildFile; fileRef = 9C1363BF0D0A7921006C550D /* Caen265.nib */; };
 		9C1363C80D0A7921006C550D /* Caen265Card.tif in Resources */ = {isa = PBXBuildFile; fileRef = 9C1363C00D0A7921006C550D /* Caen265Card.tif */; };
@@ -7448,15 +7446,13 @@
 		84FFCAA30636D5B10069432F /* ORCaen792Controller.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ORCaen792Controller.m; sourceTree = "<group>"; };
 		84FFCAA40636D5B10069432F /* ORCaen792Model.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ORCaen792Model.h; sourceTree = "<group>"; };
 		84FFCAA50636D5B10069432F /* ORCaen792Model.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ORCaen792Model.m; sourceTree = "<group>"; };
-		865FD0092E1D7A62003112E0 /* ORRaspberryPiCmd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORRaspberryPiCmd.h; sourceTree = "<group>"; };
-		865FD00A2E1D7A62003112E0 /* ORRaspberryPiCmd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORRaspberryPiCmd.m; sourceTree = "<group>"; };
 		865FD00B2E1D7A62003112E0 /* ORRaspberryPiController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORRaspberryPiController.h; sourceTree = "<group>"; };
 		865FD00C2E1D7A62003112E0 /* ORRaspberryPiController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORRaspberryPiController.m; sourceTree = "<group>"; };
 		865FD00D2E1D7A62003112E0 /* ORRaspberryPiModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORRaspberryPiModel.h; sourceTree = "<group>"; };
 		865FD00E2E1D7A62003112E0 /* ORRaspberryPiModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORRaspberryPiModel.m; sourceTree = "<group>"; };
-		865FD00F2E1D7A62003112E0 /* RaspberryPi.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = RaspberryPi.nib; sourceTree = "<group>"; };
 		865FD0222E1DBB05003112E0 /* RaspberryPiObj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RaspberryPiObj.png; sourceTree = "<group>"; };
 		865FD0282E1DBD95003112E0 /* RaspberryPi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RaspberryPi.png; sourceTree = "<group>"; };
+		865FD02C2E1EFAAB003112E0 /* RaspberryPi.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RaspberryPi.xib; sourceTree = "<group>"; };
 		9C086CE80D10AB6200524F47 /* mainFocalPlaneDetector.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = mainFocalPlaneDetector.tif; path = "Source/Objects/Hardware/I2C/Custom Hardware/KATRIN Hardware/eGun/mainFocalPlaneDetector.tif"; sourceTree = SOURCE_ROOT; };
 		9C1363BF0D0A7921006C550D /* Caen265.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Caen265.nib; path = Source/Objects/Hardware/Vme/CAEN/CV265/Caen265.nib; sourceTree = SOURCE_ROOT; };
 		9C1363C00D0A7921006C550D /* Caen265Card.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Caen265Card.tif; path = Source/Objects/Hardware/Vme/CAEN/CV265/Caen265Card.tif; sourceTree = SOURCE_ROOT; };
@@ -15225,13 +15221,11 @@
 			children = (
 				865FD0282E1DBD95003112E0 /* RaspberryPi.png */,
 				865FD0222E1DBB05003112E0 /* RaspberryPiObj.png */,
-				865FD0092E1D7A62003112E0 /* ORRaspberryPiCmd.h */,
-				865FD00A2E1D7A62003112E0 /* ORRaspberryPiCmd.m */,
 				865FD00B2E1D7A62003112E0 /* ORRaspberryPiController.h */,
 				865FD00C2E1D7A62003112E0 /* ORRaspberryPiController.m */,
 				865FD00D2E1D7A62003112E0 /* ORRaspberryPiModel.h */,
 				865FD00E2E1D7A62003112E0 /* ORRaspberryPiModel.m */,
-				865FD00F2E1D7A62003112E0 /* RaspberryPi.nib */,
+				865FD02C2E1EFAAB003112E0 /* RaspberryPi.xib */,
 			);
 			path = RaspberryPi;
 			sourceTree = "<group>";
@@ -16746,7 +16740,6 @@
 				843800310AB23EC20069C0BA /* ORRangeTimerModel.h in Headers */,
 				865FD0142E1D7A62003112E0 /* ORRaspberryPiController.h in Headers */,
 				865FD0152E1D7A62003112E0 /* ORRaspberryPiModel.h in Headers */,
-				865FD0162E1D7A62003112E0 /* ORRaspberryPiCmd.h in Headers */,
 				84861D300ACD83F300C543D7 /* ORL4532Controller.h in Headers */,
 				84861D320ACD83F300C543D7 /* ORL4532Model.h in Headers */,
 				84861DAA0ACDA9B600C543D7 /* ORL4532Decoders.h in Headers */,
@@ -18385,6 +18378,7 @@
 				84AFC24C1029F35E009F4139 /* lowVoltage.png in Resources */,
 				84AFC2531029F35E009F4139 /* upRamp.png in Resources */,
 				84AFC2541029F35E009F4139 /* VHQ224L.nib in Resources */,
+				865FD02D2E1EFAAB003112E0 /* RaspberryPi.xib in Resources */,
 				84AFC2551029F35E009F4139 /* VHQ224L.tif in Resources */,
 				84FA6392102B041800B426A6 /* SIS3350.nib in Resources */,
 				84FA6393102B041800B426A6 /* SIS3350Card.gif in Resources */,
@@ -18412,7 +18406,6 @@
 				847D76FB10B795DE00893F3A /* killScript in Resources */,
 				847D76FE10B7963D00893F3A /* makeScript in Resources */,
 				E6C7A5AB26D0400A007E65AE /* flashcam_adc.jpg in Resources */,
-				865FD0122E1D7A62003112E0 /* RaspberryPi.nib in Resources */,
 				8435AACC10C6D0EF00E03F7F /* NoOilHelp.plist in Resources */,
 				8435AAD410C6D0EF00E03F7F /* VarianTPS.nib in Resources */,
 				8435AAD510C6D0EF00E03F7F /* VarianTPS.tif in Resources */,
@@ -19869,7 +19862,6 @@
 				84716E3220D2BBD400649339 /* ORMultiplierController.m in Sources */,
 				CE0216BE1512139A00456EB7 /* ORnEDMCoilController.m in Sources */,
 				CE0216C01512139A00456EB7 /* ORnEDMCoilModel.m in Sources */,
-				865FD0172E1D7A62003112E0 /* ORRaspberryPiCmd.m in Sources */,
 				865FD0182E1D7A62003112E0 /* ORRaspberryPiModel.m in Sources */,
 				865FD0192E1D7A62003112E0 /* ORRaspberryPiController.m in Sources */,
 				8499A7591518D85800CD7AAC /* ORCP8CryopumpController.m in Sources */,

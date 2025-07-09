@@ -17,55 +17,30 @@
 //express or implied, or assume any liability or responsibility
 //for the use of this software.
 //-------------------------------------------------------------
+
 #import "ORValueBarGroupView.h"
+#import "OrcaObjectController.h"
+#import "ORTimedTextField.h"
+
+#import <Cocoa/Cocoa.h>
+
 @interface ORRaspberryPiController : OrcaObjectController
 {
-    IBOutlet NSTextField*       hostNameField;
-    IBOutlet NSTextField*       orgField;
-    IBOutlet NSTextField*       authTokenField;
-    IBOutlet NSTextField*       rateField;
-    IBOutlet NSTextField*       connectionErrField;
-    IBOutlet NSButton*          deleteBucketButton;
-    IBOutlet NSButton*          InFluxDBLockButton;
-    IBOutlet NSButton*          stealthModeButton;
-    IBOutlet NSTextField*       dbStatusField;
-    IBOutlet NSTableView*       bucketTableView;
-    IBOutlet ORTimedTextField*  errorField;
-    IBOutlet NSTextField*       measurementTimeOutField;
-    IBOutlet NSTextField*       maxLineCountField;
-    IBOutlet ORValueBarGroupView* rate0;
+    //- (id) init;
+    //- (NSWindow *)buildMainWindow;
+    IBOutlet NSButton*                sendButton;
+    IBOutlet NSTextField*           userNameField;
+    IBOutlet NSTextField*           cmdPathField;
+    IBOutlet NSTextField*           ipAddressField;
 }
 
 #pragma mark ***Interface Management
-- (void) registerNotificationObservers;
-- (void) hostNameChanged:(NSNotification*)aNote;
-- (void) authTokenChanged:(NSNotification*)aNote;
-- (void) orgChanged:(NSNotification*)aNote;
-- (void) inFluxDBLockChanged:(NSNotification*)aNote;
-- (void) rateChanged:(NSNotification*)aNote;
-- (void) stealthModeChanged:(NSNotification*)aNote;
-- (void) bucketArrayChanged:(NSNotification*)aNote;
-- (void) errorStringChanged:(NSNotification*)aNote;
-- (void) connectionStatusChanged:(NSNotification*)aNote;
-- (void) maxLineCountChanged:(NSNotification*)aNote;
-- (void) measurementTimeOutChanged:(NSNotification*)aNote;
+- (void) userNameChanged:(NSNotification*)aNote;
+- (void) ipAddressChanged:(NSNotification*)aNote;
 
 #pragma mark •••Actions
-- (IBAction) hostNameAction:(id)sender;
-- (IBAction) authTokenAction:(id)sender;
-- (IBAction) orgAction:(id)sender;
-- (IBAction) refreshInfoAction:(id)sender;
-- (IBAction) deleteBucketsAction:(id)sender;
-- (IBAction) InFluxDBLockAction:(id)sender;
-- (IBAction) stealthModeAction:(id)sender;
-- (IBAction) createBucketsAction:(id)sender;
-- (IBAction) measurementTimeOutAction:(id)sender;
-- (IBAction) maxLineCountAction:(id)sender;
+- (IBAction) userNameAction:(id)sender;
+- (IBAction) cmdPathAction:(id)sender;
+- (IBAction) ipAddressAction:(id)sender;
 
-#pragma mark •••Data Source Methods
-- (NSInteger)numberOfRowsInTableView:(NSTableView*)aTableView;
-- (id) tableView:(NSTableView*) aTableView objectValueForTableColumn:(NSTableColumn*) aTableColumn row:(NSInteger) rowIndex;
-- (void) tableViewSelectionDidChange:(NSNotification *)aNotification;
-- (void) tableViewSelectionDidChange:(NSNotification *)aNotification;
 @end
-

@@ -19,123 +19,43 @@
 //-------------------------------------------------------------
 
 #pragma mark ***Imported Files
+#import "OrcaObject.h"
 
 @class ORRaspberryPi;
 @class ORAlarm;
 @class ORSafeQueue;
-#import "ORRaspberryPiCmd.h"
-
-typedef enum { kInFluxDBConnectionBad,
-               kInFluxDBConnectionOK,
-               kInFluxDBConnectionUnknown } ORRaspberryPiConnectionStatus;
 
 @interface ORRaspberryPiModel : OrcaObject
 {
-@private
-    NSString*      hostName;
-    NSTimer*       timer;
-    NSInteger      totalSent;
-    NSInteger      messageRate;
-    BOOL           stealthMode;
-    BOOL           scheduledForRunInfoUpdate;
-    //NSString*      alertMessage;
-    //int            alertType;
-    NSString*      thisHostAddress;
-    NSString*      experimentName;
-    NSString*      runNumberString;
-    NSString*      errorString;
-    short          measurementTimeOut;
-    short          maxLineCount;
-    
+    NSString*           ipAddress;
+    NSString*           userName;
+    NSString*           cmdPath;
     //----queue thread--------
-    bool           canceled;
-    NSThread*      processThread;
-    ORSafeQueue*   messageQueue;
+    bool                canceled;
+    NSThread*           processThread;
+    ORSafeQueue*        cmdQueue;
     
-    NSMutableArray* bucketArray;
-    NSArray*       orgArray;
-    NSString*      org;
-    NSMutableDictionary* cmdBuffer;
-    
-    //----http vars--------
-    NSString*      authToken;
-    ORRaspberryPiConnectionStatus connectionStatus;
-    ORAlarm*                   connectionAlarm;
-    NSDate*                    lastAlarmDate;
 }
-
-#pragma mark ***Initialization
-- (id)   init;
-- (void) dealloc;
-
-#pragma mark ***Notifications
-- (void) registerNotificationObservers;
-- (void) applicationIsTerminating : (NSNotification*)aNote;
-- (void) alarmPosted              : (NSNotification*)aNote;
-- (void) alarmCleared             : (NSNotification*)aNote;
-- (void) alarmAcknowledged        : (NSNotification*)aNote;
-
 #pragma mark ***Accessors
-- (ORRaspberryPiConnectionStatus) connectionStatus;
-- (void)        setConnectionStatus:(ORRaspberryPiConnectionStatus)status;
-- (void)        setConnectionStatusBad;
-- (void)        setConnectionStatusOK;
-- (void)        setConnectionStatusUnknown;
-- (NSString*)   experimentName;
-- (void)        setExperimentName:(NSString*)aName;
-- (NSString*)   hostName;
-- (void)        setHostName:(NSString*)aHost;
-- (NSString*)   authToken;
-- (void)        setAuthToken:(NSString*)aToken;
-- (NSString*)   org;
-- (NSString*)   orgId;
-- (void)        setOrg:(NSString*)anOrg;
-- (id)          nextObject;
-- (NSInteger)   messageRate;
-- (BOOL)        stealthMode;
-- (void)        setStealthMode:(BOOL)aStealthMode;
-- (void)        executeDBCmd:(id)aCmd;
-- (NSArray*)    bucketArray;
-- (NSArray*)    orgArray;
-- (void)        deleteBucket:(NSInteger)index;
-- (void)        createBuckets;
-- (void)        decodeOrgList:(NSDictionary*)result;
-- (void)        decodeBucketList:(NSDictionary*)result;
-- (NSString*)   errorString;
-- (void)        setErrorString:(NSString*)anError;
-- (short)       measurementTimeOut;
-- (void)        setMeasurementTimeOut:(short)aValue;
-- (short)       maxLineCount;
-- (void)        setMaxLineCount:(short)aValue;
-- (void)        cmdFlush;
-
-#pragma mark ***Thread
-- (void) sendCmd:(ORRaspberryPiCmd*)aCmd;
-- (void) bufferMeasurement:(ORRaspberryPiCmd*)aCmd;
-- (void) sendMeasurements;
-
-#pragma mark ***Scripting
--(ORRaspberryPiMeasurement*) cmdForBucket:(NSString*)aBucket;
-
+- (NSString*) ipAddress;
+- (void) setIPAddress:(NSString*)anIP;
+- (NSString*) userName;
+- (void) setUserName:(NSString*)aName;
+- (NSString*) cmdPath;
+- (void) setCmdPath:(NSString*)aPath;
 
 #pragma mark ***Archival
 - (id)   initWithCoder:(NSCoder*)decoder;
 - (void) encodeWithCoder:(NSCoder*)encoder;
+#pragma mark ***Initialization
+- (id)   init;
+- (void) dealloc;
+- (void)runCommand:(NSString *)command
+              host:(NSString *)host
+            user:(NSString *)user
+        completion:(void (^)(NSString *output))completion;
 @end
 
-
-extern NSString* ORRaspberryPiOrgArrayChanged;
-extern NSString* ORRaspberryPiBucketArrayChanged;
-extern NSString* ORRaspberryPiPortNumberChanged;
-extern NSString* ORRaspberryPiHostNameChanged;
-extern NSString* ORRaspberryPiRateChanged;
-extern NSString* ORRaspberryPiAuthTokenChanged;
-extern NSString* ORRaspberryPiOrgChanged;
-extern NSString* ORRaspberryPiStealthModeChanged;
-extern NSString* ORRaspberryPiBucketChanged;
-extern NSString* ORRaspberryPiErrorChanged;
-extern NSString* ORRaspberryPiConnectionStatusChanged;
-extern NSString* ORRaspberryPiMaxLineCountChanged;
-extern NSString* ORRaspberryPiMeasurementTimeOutChanged;;
-
-extern NSString* ORRaspberryPiLock;
+extern NSString* ORRaspberryPiIPAddressChanged;
+extern NSString* ORRaspberryPiUserNameChanged;
+extern NSString* ORRaspberryPiCmdPathChanged;
