@@ -30,7 +30,7 @@
 #pragma mark •••Initialization
 -(id)init
 {
-    self = [super initWithWindowNibName:@"InFlux"];
+    self = [super initWithWindowNibName:@"RaspberryPi"];
     return self;
 }
 
