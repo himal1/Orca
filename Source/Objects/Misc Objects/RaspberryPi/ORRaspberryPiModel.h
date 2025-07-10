@@ -51,6 +51,7 @@
 - (id)   init;
 - (void) dealloc;
 - (void)runCommand:(NSString *)command
+              path:(NSString *)path
               host:(NSString *)host
             user:(NSString *)user
         completion:(void (^)(NSString *output))completion;

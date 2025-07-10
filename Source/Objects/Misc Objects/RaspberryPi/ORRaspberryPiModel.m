@@ -101,15 +101,9 @@ NSString* ORRaspberryPiIPAddressChanged = @"ORRaspberryPiIPAddressChanged";
     self = [super initWithCoder:decoder];
     
     [[self undoManager] disableUndoRegistration];
-
-    //[self setPollTime:    [decoder decodeIntForKey:    @"pollTime"]];
     [self setUserName:    [decoder decodeObjectForKey: @"userName"]];
     [self setCmdPath:     [decoder decodeObjectForKey: @"cmdPath"]];
     [self setIPAddress:   [decoder decodeObjectForKey: @"ipAddress"]];
-    //[self setSourceNumber:[decoder decodeIntForKey:    @"sourceNumber"]];
-    //[self setSourceArray: [decoder decodeObjectForKey: @"sourceHeight"]];
-    //[self registerNotificationObservers];
-
     [[self undoManager] enableUndoRegistration];
         
     return self;
@@ -118,19 +112,13 @@ NSString* ORRaspberryPiIPAddressChanged = @"ORRaspberryPiIPAddressChanged";
 - (void)encodeWithCoder:(NSCoder*)encoder
 {
     [super encodeWithCoder:encoder];
-    //[encoder encodeInteger:pollTime    forKey: @"pollTime"];
     [encoder encodeObject:userName     forKey: @"userName"];
     [encoder encodeObject:cmdPath      forKey: @"cmdPath"];
     [encoder encodeObject:ipAddress    forKey: @"ipAddress"];
-    //[encoder encodeInt:sourceNumber    forKey: @"sourceNumber"];
-    //[encoder encodeObject:sourceHeight forKey: @"sourceHeight"];
 }
 
-
-
-
-
 - (void)runCommand:(NSString *)command
+              path:(NSString *)path
              host:(NSString *)host
              user:(NSString *)user
         completion:(void (^)(NSString *output))completion
