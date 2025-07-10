@@ -32,6 +32,7 @@
     IBOutlet NSTextField*           userNameField;
     IBOutlet NSTextField*           cmdPathField;
     IBOutlet NSTextField*           ipAddressField;
+    IBOutlet NSTextField*           runCommandField;
 }
 
 #pragma mark ***Interface Management
@@ -42,5 +43,5 @@
 - (IBAction) userNameAction:(id)sender;
 - (IBAction) cmdPathAction:(id)sender;
 - (IBAction) ipAddressAction:(id)sender;
-
+- (IBAction) runAction:(id)sender;
 @end

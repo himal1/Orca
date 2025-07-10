@@ -92,7 +92,7 @@
 }
 - (NSString*) windowNibName
 {
-   return @"RaspberryPi";
+    return @"RaspberryPi";
 }
 
 #pragma mark •••Actions
@@ -110,5 +110,14 @@
 {
     [model setIPAddress:[ipAddressField stringValue]];
 }
+- (IBAction) runAction:(id)sender
+{
+    NSLog(@"Run Button is working");
+    NSLog(@"The ip address is : %@", [ipAddressField stringValue]);
+    NSLog(@"The username is : %@", [userNameField stringValue]);
+    
+}
+
+
 @end
 

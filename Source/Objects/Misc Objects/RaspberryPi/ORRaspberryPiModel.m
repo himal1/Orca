@@ -64,6 +64,7 @@ NSString* ORRaspberryPiIPAddressChanged = @"ORRaspberryPiIPAddressChanged";
     [[[self undoManager] prepareWithInvocationTarget:self] setIPAddress:ipAddress];
     [ipAddress autorelease];
     ipAddress = [anIP copy];
+    NSLog(@"IP Address is chenged and sent notification: %@", anIP);
     [[NSNotificationCenter defaultCenter] postNotificationName:ORRaspberryPiIPAddressChanged object:self];
 }
 
