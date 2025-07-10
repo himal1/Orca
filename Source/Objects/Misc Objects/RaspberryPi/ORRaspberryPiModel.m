@@ -65,7 +65,6 @@ NSString* ORRaspberryPiIPAddressChanged = @"ORRaspberryPiIPAddressChanged";
     [[[self undoManager] prepareWithInvocationTarget:self] setIPAddress:ipAddress];
     [ipAddress autorelease];
     ipAddress = [anIP copy];
-    NSLog(@"IP Address is chenged and sent notification: %@", anIP);
     [[NSNotificationCenter defaultCenter] postNotificationName:ORRaspberryPiIPAddressChanged object:self];
 }
 
@@ -104,7 +103,6 @@ NSString* ORRaspberryPiIPAddressChanged = @"ORRaspberryPiIPAddressChanged";
     
     [[self undoManager] disableUndoRegistration];
     [self setUserName:    [decoder decodeObjectForKey: @"userName"]];
-    NSLog(@"This is the way we get username: %@", [decoder decodeObjectForKey: @"userName"]);
     [self setCmdPath:     [decoder decodeObjectForKey: @"cmdPath"]];
     [self setIPAddress:   [decoder decodeObjectForKey: @"ipAddress"]];
     [[self undoManager] enableUndoRegistration];
