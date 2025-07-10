@@ -44,6 +44,7 @@ NSString* ORRaspberryPiIPAddressChanged = @"ORRaspberryPiIPAddressChanged";
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     [super sleep];
 }
+
 - (void) makeMainController
 {
     [self linkToController:@"ORRaspberryPiController"];
@@ -103,6 +104,7 @@ NSString* ORRaspberryPiIPAddressChanged = @"ORRaspberryPiIPAddressChanged";
     
     [[self undoManager] disableUndoRegistration];
     [self setUserName:    [decoder decodeObjectForKey: @"userName"]];
+    NSLog(@"This is the way we get username: %@", [decoder decodeObjectForKey: @"userName"]);
     [self setCmdPath:     [decoder decodeObjectForKey: @"cmdPath"]];
     [self setIPAddress:   [decoder decodeObjectForKey: @"ipAddress"]];
     [[self undoManager] enableUndoRegistration];
@@ -163,19 +165,19 @@ NSString* ORRaspberryPiIPAddressChanged = @"ORRaspberryPiIPAddressChanged";
 }
 
 
-//- (void) wakeUp
-//{
-//    if(![self aWake]){
-//        //[self buildMainWindow];
+- (void) wakeUp
+{
+    if(![self aWake]){
+        //[self buildMainWindow];
         //[self setConnectionStatusOK];
         //[self connectionChanged];
         //[self _startAllPeriodicOperations];
         //[self registerNotificationObservers];
         //[self executeDBCmd:[ORRaspberryPiListOrgs    listOrgs]];
         //[self executeDBCmd:[ORRaspberryPiListBuckets listBuckets]];
-   // }
-   // [super wakeUp];
-//}
+    }
+    [super wakeUp];
+}
 
 
 //- (void) makeConnectors

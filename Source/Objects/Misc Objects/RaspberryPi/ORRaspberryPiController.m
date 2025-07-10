@@ -79,6 +79,7 @@
 - (void) userNameChanged:(NSNotification*)aNote
 {
     [userNameField setStringValue:[model userName]];
+    NSLog(@"Place to change the string value to : %@", userNameField);
 }
 
 - (void) cmdPathChanged:(NSNotification*)aNote
