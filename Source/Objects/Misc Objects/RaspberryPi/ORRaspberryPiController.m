@@ -62,6 +62,11 @@
                      selector : @selector(ipAddressChanged:)
                          name : ORRaspberryPiIPAddressChanged
                         object: model];
+    
+    [notifyCenter addObserver : self
+                     selector : @selector(runCommandChanged:)
+                         name : ORRaspberryPiRunCommandChanged
+                        object: model];
 }
 
 - (void) updateWindow
@@ -70,12 +75,19 @@
     [self userNameChanged:nil];
     [self cmdPathChanged:nil];
     [self ipAddressChanged:nil];
+    [self runCommandChanged:nil];
 }
 
 - (void) setModel:(id)aModel
 {
     [super setModel:aModel];
 }
+
+- (NSString*) windowNibName
+{
+    return @"RaspberryPi";
+}
+#pragma mark •••Notifications
 - (void) userNameChanged:(NSNotification*)aNote
 {
     [userNameField setStringValue:[model userName]];
@@ -90,10 +102,11 @@
 {
     [ipAddressField setStringValue:[model ipAddress]];
 }
-- (NSString*) windowNibName
+- (void) runCommandChanged:(NSNotification*)aNote
 {
-    return @"RaspberryPi";
+    [runCommandField setStringValue:[model runCommand]];
 }
+
 
 #pragma mark •••Actions
 - (IBAction) userNameAction:(id)sender
@@ -110,12 +123,19 @@
 {
     [model setIPAddress:[ipAddressField stringValue]];
 }
+- (IBAction) runCommandAction:(id)sender
+{
+    [model setRunCommand:[runCommandField stringValue]];
+}
+
+
 - (IBAction) runAction:(id)sender
 {
     NSLog(@"Run Button is working");
     NSLog(@"The ip address is : %@", [ipAddressField stringValue]);
     NSLog(@"The username is : %@", [userNameField stringValue]);
     NSLog(@"The path is : %@", [cmdPathField stringValue]);
+    NSLog(@"The command is : %@", [runCommandField stringValue]);
     
 }
 

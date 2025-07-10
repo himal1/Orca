@@ -30,6 +30,7 @@
     NSString*           ipAddress;
     NSString*           userName;
     NSString*           cmdPath;
+    NSString*           runCommand;
     //----queue thread--------
     bool                canceled;
     NSThread*           processThread;
@@ -43,6 +44,8 @@
 - (void) setUserName:(NSString*)aName;
 - (NSString*) cmdPath;
 - (void) setCmdPath:(NSString*)aPath;
+- (NSString*) runCommand;
+- (void) setRunCommand:(NSString*)aPath;
 
 #pragma mark ***Archival
 - (id)   initWithCoder:(NSCoder*)decoder;
@@ -60,3 +63,4 @@
 extern NSString* ORRaspberryPiIPAddressChanged;
 extern NSString* ORRaspberryPiUserNameChanged;
 extern NSString* ORRaspberryPiCmdPathChanged;
+extern NSString* ORRaspberryPiRunCommandChanged;

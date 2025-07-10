@@ -25,6 +25,7 @@
 NSString* ORRaspberryPiUserNameChanged  = @"ORRaspberryPiUserNameChanged";
 NSString* ORRaspberryPiCmdPathChanged   = @"ORRaspberryPiCmdPathChanged";
 NSString* ORRaspberryPiIPAddressChanged = @"ORRaspberryPiIPAddressChanged";
+NSString* ORRaspberryPiRunCommandChanged = @"ORRaspberryPiRunCommandChanged";
 
 @implementation ORRaspberryPiModel
 
@@ -96,6 +97,21 @@ NSString* ORRaspberryPiIPAddressChanged = @"ORRaspberryPiIPAddressChanged";
     [[NSNotificationCenter defaultCenter] postNotificationName:ORRaspberryPiCmdPathChanged object:self];
 }
 
+- (NSString*) runCommand
+{
+    return runCommand!=nil?runCommand:@"";
+}
+
+- (void) setRunCommand:(NSString*)aPath
+{
+    if(!aPath)aPath = @"";
+    [[[self undoManager] prepareWithInvocationTarget:self] setRunCommand:runCommand];
+    [runCommand autorelease];
+    runCommand = [aPath copy];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ORRaspberryPiRunCommandChanged object:self];
+}
+
+
 #pragma mark ***Archival
 - (id)initWithCoder:(NSCoder*)decoder
 {
@@ -105,6 +121,7 @@ NSString* ORRaspberryPiIPAddressChanged = @"ORRaspberryPiIPAddressChanged";
     [self setUserName:    [decoder decodeObjectForKey: @"userName"]];
     [self setCmdPath:     [decoder decodeObjectForKey: @"cmdPath"]];
     [self setIPAddress:   [decoder decodeObjectForKey: @"ipAddress"]];
+    [self setRunCommand:   [decoder decodeObjectForKey: @"runCommand"]];
     [[self undoManager] enableUndoRegistration];
         
     return self;
@@ -116,6 +133,7 @@ NSString* ORRaspberryPiIPAddressChanged = @"ORRaspberryPiIPAddressChanged";
     [encoder encodeObject:userName     forKey: @"userName"];
     [encoder encodeObject:cmdPath      forKey: @"cmdPath"];
     [encoder encodeObject:ipAddress    forKey: @"ipAddress"];
+    [encoder encodeObject:runCommand   forKey: @"runCommand"];
 }
 
 - (void)runCommand:(NSString *)command

@@ -38,10 +38,13 @@
 #pragma mark ***Interface Management
 - (void) userNameChanged:(NSNotification*)aNote;
 - (void) ipAddressChanged:(NSNotification*)aNote;
+- (void) cmdPathChanged:(NSNotification*)aNote;
+- (void) runCommandChanged:(NSNotification*)aNote;
 
 #pragma mark •••Actions
 - (IBAction) userNameAction:(id)sender;
 - (IBAction) cmdPathAction:(id)sender;
 - (IBAction) ipAddressAction:(id)sender;
+- (IBAction) runCommandAction:(id)sender;
 - (IBAction) runAction:(id)sender;
 @end
