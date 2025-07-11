@@ -29,6 +29,30 @@ NSString* ORRaspberryPiRunCommandChanged = @"ORRaspberryPiRunCommandChanged";
 
 @implementation ORRaspberryPiModel
 
+#pragma mark ***Initialization
+
+- (id) init
+{
+    self = [super init];
+    return self;
+}
+
+
+- (void) wakeUp
+{
+    if(![self aWake]){
+        //[self buildMainWindow];
+        //[self setConnectionStatusOK];
+        //[self connectionChanged];
+        //[self _startAllPeriodicOperations];
+        //[self registerNotificationObservers];
+        //[self executeDBCmd:[ORRaspberryPiListOrgs    listOrgs]];
+        //[self executeDBCmd:[ORRaspberryPiListBuckets listBuckets]];
+    }
+    [super wakeUp];
+}
+
+
 - (void) dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -138,6 +162,67 @@ NSString* ORRaspberryPiRunCommandChanged = @"ORRaspberryPiRunCommandChanged";
 
 - (void)runCommand:(NSString *)command
               path:(NSString *)path
+              host:(NSString *)host
+              user:(NSString *)user
+        completion:(void (^)(NSString *output))completion {
+    if (host.length == 0 || user.length == 0 || command.length == 0) {
+        if (completion) completion(@"Missing host, user, or command.");
+        return;
+    }
+
+    // Build SSH command
+    NSString *remoteCommand = [NSString stringWithFormat:@"cd %@ && %@", path, command];
+    NSString *sshCommand = [NSString stringWithFormat:@"%@@%@", user, host];
+
+    NSTask *task = [[NSTask alloc] init];
+    task.launchPath = @"/usr/bin/ssh";
+    task.arguments = @[sshCommand, remoteCommand];
+
+    // Capture standard output
+    NSPipe *outputPipe = [NSPipe pipe];
+    task.standardOutput = outputPipe;
+
+    // Capture standard error (important!)
+    NSPipe *errorPipe = [NSPipe pipe];
+    task.standardError = errorPipe;
+
+    [task setTerminationHandler:^(NSTask *t) {
+        NSData *outputData = [[outputPipe fileHandleForReading] readDataToEndOfFile];
+        NSString *outputStr = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
+
+        NSData *errorData = [[errorPipe fileHandleForReading] readDataToEndOfFile];
+        NSString *errorStr = [[NSString alloc] initWithData:errorData encoding:NSUTF8StringEncoding];
+
+        // Combine or choose which to return
+        NSString *finalOutput = @"";
+        if (t.terminationStatus == 0) {
+            finalOutput = outputStr;
+        } else {
+            finalOutput = [NSString stringWithFormat:@"SSH failed with error:\n%@", errorStr];
+        }
+
+        if (completion) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(finalOutput);
+            });
+        }
+    }];
+
+    @try {
+        [task launch];
+    } @catch (NSException *exception) {
+        NSString *exceptionMsg = [NSString stringWithFormat:@"Failed to launch SSH task: %@", exception.reason];
+        if (completion) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(exceptionMsg);
+            });
+        }
+    }
+}
+
+/*
+- (void)runCommand:(NSString *)command
+              path:(NSString *)path
              host:(NSString *)host
              user:(NSString *)user
         completion:(void (^)(NSString *output))completion
@@ -171,29 +256,7 @@ NSString* ORRaspberryPiRunCommandChanged = @"ORRaspberryPiRunCommandChanged";
         });
     });
 }
-
-#pragma mark ***Initialization
-
-- (id) init
-{
-    self = [super init];
-    return self;
-}
-
-
-- (void) wakeUp
-{
-    if(![self aWake]){
-        //[self buildMainWindow];
-        //[self setConnectionStatusOK];
-        //[self connectionChanged];
-        //[self _startAllPeriodicOperations];
-        //[self registerNotificationObservers];
-        //[self executeDBCmd:[ORRaspberryPiListOrgs    listOrgs]];
-        //[self executeDBCmd:[ORRaspberryPiListBuckets listBuckets]];
-    }
-    [super wakeUp];
-}
+*/
 
 
 //- (void) makeConnectors

@@ -33,6 +33,7 @@
     IBOutlet NSTextField*           cmdPathField;
     IBOutlet NSTextField*           ipAddressField;
     IBOutlet NSTextField*           runCommandField;
+    IBOutlet NSTextField*           outputField;
 }
 
 #pragma mark ***Interface Management

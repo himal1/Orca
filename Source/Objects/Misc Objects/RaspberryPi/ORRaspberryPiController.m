@@ -131,14 +131,20 @@
 
 - (IBAction) runAction:(id)sender
 {
-    NSLog(@"Run Button is working");
-    NSLog(@"The ip address is : %@", [ipAddressField stringValue]);
-    NSLog(@"The username is : %@", [userNameField stringValue]);
-    NSLog(@"The path is : %@", [cmdPathField stringValue]);
-    NSLog(@"The command is : %@", [runCommandField stringValue]);
-    
+    [model runCommand:[runCommandField stringValue]
+                path:[cmdPathField stringValue]
+                host:[ipAddressField stringValue]
+                user:[userNameField stringValue]
+           completion:^(NSString *output_out) {
+        NSString *output = [NSString stringWithFormat:@"The IP address is: %@\nThe username is: %@\nThe path is: %@\nThe command is: %@ \n The output is :%@",
+                            [ipAddressField stringValue],
+                            [userNameField stringValue],
+                            [cmdPathField stringValue],
+                            [runCommandField stringValue], output_out];
+        //NSLog(@"Command output: %@", output);
+        [outputField setStringValue:output];
+    }];
 }
-
 
 @end
 
